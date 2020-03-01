@@ -26,48 +26,31 @@ class GildedRose {
 
     private void updateQuality() {
         for (Product product : products) {
-            if (!product.name.equals(AGED_BRIE) && !product.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-                if (product.quality > 0) {
-                    if (!product.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                        product.quality = product.quality - 1;
-                    }
-                }
-            } else {
-                if (product.quality < 50) {
-                    product.quality = product.quality + 1;
-
-                    if (product.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-                        if (product.sellIn < 11) {
-                            if (product.quality < 50) {
-                                product.quality = product.quality + 1;
-                            }
-                        }
-
-                        if (product.sellIn < 6) {
-                            if (product.quality < 50) {
-                                product.quality = product.quality + 1;
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (product.sellIn < 0) {
-                if (!product.name.equals(AGED_BRIE)) {
-                    if (!product.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-                        if (product.quality > 0) {
-                            if (!product.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                                product.quality = product.quality - 1;
-                            }
-                        }
-                    } else {
+            switch (product.name) {
+                case SULFURAS_HAND_OF_RAGNAROS:
+                    break;
+                case AGED_BRIE:
+                    if (product.quality < 50)
+                        product.quality += 1;
+                    if (product.quality < 50 && product.sellIn < 0)
+                        product.quality += 1;
+                    break;
+                case BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT:
+                    if (product.quality < 50)
+                        product.quality += 1;
+                    if (product.quality < 50 && product.sellIn < 11)
+                        product.quality += 1;
+                    if (product.quality < 50 && product.sellIn < 6)
+                        product.quality += 1;
+                    if (product.sellIn < 0)
                         product.quality = 0;
-                    }
-                } else {
-                    if (product.quality < 50) {
-                        product.quality = product.quality + 1;
-                    }
-                }
+                    break;
+                default:
+                    if (product.quality > 0)
+                        product.quality -= 1;
+                    if (product.quality > 0 && product.sellIn < 0)
+                        product.quality -= 1;
+                    break;
             }
         }
     }
