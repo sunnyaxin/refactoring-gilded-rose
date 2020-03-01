@@ -1,38 +1,28 @@
 package com.gildedrose;
 
+import com.gildedrose.product.ABProduct;
+import com.gildedrose.product.BPTAT8ECProduct;
+import com.gildedrose.product.OtherProduct;
+import com.gildedrose.product.Product;
+import com.gildedrose.product.SHORProduct;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.gildedrose.ProductRulesName.AGED_BRIE;
-import static com.gildedrose.ProductRulesName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT;
-import static com.gildedrose.ProductRulesName.CONJURED_MANA_CAKE;
-import static com.gildedrose.ProductRulesName.ELIXIR_OF_THE_MONGOOSE;
-import static com.gildedrose.ProductRulesName.PLUS_FIVE_DEXTERITY_VEST;
-import static com.gildedrose.ProductRulesName.SULFURAS_HAND_OF_RAGNAROS;
+import static com.gildedrose.product.ABProduct.AGED_BRIE;
+import static com.gildedrose.product.BPTAT8ECProduct.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT;
+import static com.gildedrose.product.OtherProduct.OTHER_PRODUCT_NAME;
+import static com.gildedrose.product.SHORProduct.SULFURAS_HAND_OF_RAGNAROS;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class GildedRoseTest {
 
     @Test
-    public void update_product_when_rule_is_PLUS_FIVE_DEXTERITY_VEST() {
+    public void update_product_when_name_is_AGED_BRIE() {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(PLUS_FIVE_DEXTERITY_VEST, 10, 20));
-        GildedRose app = new GildedRose(products);
-
-        app.updateProducts();
-
-        assertThat(app.products.get(0).name, is(PLUS_FIVE_DEXTERITY_VEST));
-        assertThat(app.products.get(0).sellIn, is(9));
-        assertThat(app.products.get(0).quality, is(19));
-    }
-
-    @Test
-    public void update_product_when_rule_is_AGED_BRIE() {
-        List<Product> products = new ArrayList<>();
-        products.add(new Product(AGED_BRIE, 2, 0));
+        products.add(new ABProduct(2, 0));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -43,22 +33,9 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void update_product_when_rule_is_ELIXIR_OF_THE_MONGOOSE() {
+    public void update_product_when_name_is_SULFURAS_HAND_OF_RAGNAROS_with_sellin_is_zero() {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(ELIXIR_OF_THE_MONGOOSE, 5, 7));
-        GildedRose app = new GildedRose(products);
-
-        app.updateProducts();
-
-        assertThat(app.products.get(0).name, is(ELIXIR_OF_THE_MONGOOSE));
-        assertThat(app.products.get(0).sellIn, is(4));
-        assertThat(app.products.get(0).quality, is(6));
-    }
-
-    @Test
-    public void update_product_when_rule_is_SULFURAS_HAND_OF_RAGNAROS_with_sellin_is_zero() {
-        List<Product> products = new ArrayList<>();
-        products.add(new Product(SULFURAS_HAND_OF_RAGNAROS, 0, 80));
+        products.add(new SHORProduct(0, 80));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -69,9 +46,9 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void update_product_when_rule_is_SULFURAS_HAND_OF_RAGNAROS_with_sellin_is_less_than_zero() {
+    public void update_product_when_name_is_SULFURAS_HAND_OF_RAGNAROS_with_sellin_is_less_than_zero() {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(SULFURAS_HAND_OF_RAGNAROS, -1, 80));
+        products.add(new SHORProduct(-1, 80));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -82,9 +59,9 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void update_product_when_rule_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_less_than_50() {
+    public void update_product_when_name_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_less_than_50() {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, 15, 20));
+        products.add(new BPTAT8ECProduct(15, 20));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -95,9 +72,9 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void update_product_when_rule_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_is_50() {
+    public void update_product_when_name_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_is_50() {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, 9, 50));
+        products.add(new BPTAT8ECProduct(9, 50));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -108,9 +85,9 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void update_product_when_rule_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_is_50_sellin_less_than_6() {
+    public void update_product_when_name_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_is_50_sellin_less_than_6() {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, 1, 20));
+        products.add(new BPTAT8ECProduct(1, 20));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -121,9 +98,9 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void update_product_when_rule_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_is_less_than_50_sellin_is_0() {
+    public void update_product_when_name_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_is_less_than_50_sellin_is_0() {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, 0, 23));
+        products.add(new BPTAT8ECProduct(0, 23));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -134,14 +111,14 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void update_product_when_rule_is_CONJURED_MANA_CAKE() {
+    public void update_product_when_name_is_OTHER_PRODUCT_NAME() {
         List<Product> products = new ArrayList<>();
-        products.add(new Product(CONJURED_MANA_CAKE, 3, 6));
+        products.add(new OtherProduct(3, 6));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).name, is(CONJURED_MANA_CAKE));
+        assertThat(app.products.get(0).name, is(OTHER_PRODUCT_NAME));
         assertThat(app.products.get(0).sellIn, is(2));
         assertThat(app.products.get(0).quality, is(5));
     }
