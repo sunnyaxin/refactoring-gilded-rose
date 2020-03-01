@@ -11,7 +11,20 @@ class GildedRose {
         this.products = products;
     }
 
-    public void updateQuality() {
+    public void updateProducts() {
+        updateSellIn();
+        updateQuality();
+    }
+
+    private void updateSellIn() {
+        for (Product product : products) {
+            if (!product.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+                product.sellIn = product.sellIn - 1;
+            }
+        }
+    }
+
+    private void updateQuality() {
         for (Product product : products) {
             if (!product.name.equals(AGED_BRIE) && !product.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
                 if (product.quality > 0) {
@@ -37,10 +50,6 @@ class GildedRose {
                         }
                     }
                 }
-            }
-
-            if (!product.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                product.sellIn = product.sellIn - 1;
             }
 
             if (product.sellIn < 0) {

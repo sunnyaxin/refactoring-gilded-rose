@@ -18,7 +18,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(PLUS_FIVE_DEXTERITY_VEST, 10, 20)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(PLUS_FIVE_DEXTERITY_VEST));
         assertThat(app.products[0].sellIn, is(9));
@@ -30,7 +30,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(AGED_BRIE, 2, 0)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(AGED_BRIE));
         assertThat(app.products[0].sellIn, is(1));
@@ -42,7 +42,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(ELIXIR_OF_THE_MONGOOSE, 5, 7)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(ELIXIR_OF_THE_MONGOOSE));
         assertThat(app.products[0].sellIn, is(4));
@@ -54,7 +54,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(SULFURAS_HAND_OF_RAGNAROS, 0, 80)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(SULFURAS_HAND_OF_RAGNAROS));
         assertThat(app.products[0].sellIn, is(0));
@@ -66,7 +66,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(SULFURAS_HAND_OF_RAGNAROS, -1, 80)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(SULFURAS_HAND_OF_RAGNAROS));
         assertThat(app.products[0].sellIn, is(-1));
@@ -78,7 +78,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, 15, 20)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT));
         assertThat(app.products[0].sellIn, is(14));
@@ -90,7 +90,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, 9, 50)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT));
         assertThat(app.products[0].sellIn, is(8));
@@ -102,7 +102,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, 1, 20)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT));
         assertThat(app.products[0].sellIn, is(0));
@@ -114,7 +114,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, 0, 23)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT));
         assertThat(app.products[0].sellIn, is(-1));
@@ -126,7 +126,7 @@ public class GildedRoseTest {
         Product[] products = new Product[]{new Product(CONJURED_MANA_CAKE, 3, 6)};
         GildedRose app = new GildedRose(products);
 
-        app.updateQuality();
+        app.updateProducts();
 
         assertThat(app.products[0].name, is(CONJURED_MANA_CAKE));
         assertThat(app.products[0].sellIn, is(2));
