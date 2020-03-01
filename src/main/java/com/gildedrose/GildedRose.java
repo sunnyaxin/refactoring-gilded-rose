@@ -1,13 +1,15 @@
 package com.gildedrose;
 
+import java.util.List;
+
 import static com.gildedrose.ProductRulesName.AGED_BRIE;
 import static com.gildedrose.ProductRulesName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT;
 import static com.gildedrose.ProductRulesName.SULFURAS_HAND_OF_RAGNAROS;
 
 class GildedRose {
-    Product[] products;
+    List<Product> products;
 
-    public GildedRose(Product[] products) {
+    public GildedRose(List<Product> products) {
         this.products = products;
     }
 
@@ -17,11 +19,9 @@ class GildedRose {
     }
 
     private void updateSellIn() {
-        for (Product product : products) {
-            if (!product.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                product.sellIn = product.sellIn - 1;
-            }
-        }
+        products.stream()
+                .filter(product -> !product.name.equals(SULFURAS_HAND_OF_RAGNAROS))
+                .forEach(product -> product.sellIn -= 1);
     }
 
     private void updateQuality() {
