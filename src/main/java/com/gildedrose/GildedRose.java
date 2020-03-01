@@ -12,52 +12,51 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0; i < products.length; i++) {
-            if (!products[i].name.equals(AGED_BRIE)
-                    && !products[i].name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-                if (products[i].quality > 0) {
-                    if (!products[i].name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                        products[i].quality = products[i].quality - 1;
+        for (Product product : products) {
+            if (!product.name.equals(AGED_BRIE) && !product.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
+                if (product.quality > 0) {
+                    if (!product.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+                        product.quality = product.quality - 1;
                     }
                 }
             } else {
-                if (products[i].quality < 50) {
-                    products[i].quality = products[i].quality + 1;
+                if (product.quality < 50) {
+                    product.quality = product.quality + 1;
 
-                    if (products[i].name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-                        if (products[i].sellIn < 11) {
-                            if (products[i].quality < 50) {
-                                products[i].quality = products[i].quality + 1;
+                    if (product.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
+                        if (product.sellIn < 11) {
+                            if (product.quality < 50) {
+                                product.quality = product.quality + 1;
                             }
                         }
 
-                        if (products[i].sellIn < 6) {
-                            if (products[i].quality < 50) {
-                                products[i].quality = products[i].quality + 1;
+                        if (product.sellIn < 6) {
+                            if (product.quality < 50) {
+                                product.quality = product.quality + 1;
                             }
                         }
                     }
                 }
             }
 
-            if (!products[i].name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                products[i].sellIn = products[i].sellIn - 1;
+            if (!product.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+                product.sellIn = product.sellIn - 1;
             }
 
-            if (products[i].sellIn < 0) {
-                if (!products[i].name.equals(AGED_BRIE)) {
-                    if (!products[i].name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-                        if (products[i].quality > 0) {
-                            if (!products[i].name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                                products[i].quality = products[i].quality - 1;
+            if (product.sellIn < 0) {
+                if (!product.name.equals(AGED_BRIE)) {
+                    if (!product.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
+                        if (product.quality > 0) {
+                            if (!product.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+                                product.quality = product.quality - 1;
                             }
                         }
                     } else {
-                        products[i].quality = 0;
+                        product.quality = 0;
                     }
                 } else {
-                    if (products[i].quality < 50) {
-                        products[i].quality = products[i].quality + 1;
+                    if (product.quality < 50) {
+                        product.quality = product.quality + 1;
                     }
                 }
             }
