@@ -1,19 +1,19 @@
 package com.gildedrose;
 
-import com.gildedrose.product.ABProduct;
-import com.gildedrose.product.BPTAT8ECProduct;
+import com.gildedrose.product.AgedBrieProduct;
+import com.gildedrose.product.BackstageProduct;
 import com.gildedrose.product.OtherProduct;
 import com.gildedrose.product.Product;
-import com.gildedrose.product.SHORProduct;
+import com.gildedrose.product.SulfurasProduct;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.gildedrose.product.ABProduct.AGED_BRIE;
-import static com.gildedrose.product.BPTAT8ECProduct.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT;
+import static com.gildedrose.product.AgedBrieProduct.AGED_BRIE;
+import static com.gildedrose.product.BackstageProduct.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT;
 import static com.gildedrose.product.OtherProduct.OTHER_PRODUCT_NAME;
-import static com.gildedrose.product.SHORProduct.SULFURAS_HAND_OF_RAGNAROS;
+import static com.gildedrose.product.SulfurasProduct.SULFURAS_HAND_OF_RAGNAROS;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -22,7 +22,7 @@ public class GildedRoseTest {
     @Test
     public void update_product_when_name_is_AGED_BRIE() {
         List<Product> products = new ArrayList<>();
-        products.add(new ABProduct(2, 0));
+        products.add(new AgedBrieProduct(2, 0));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -35,7 +35,7 @@ public class GildedRoseTest {
     @Test
     public void update_product_when_name_is_SULFURAS_HAND_OF_RAGNAROS_with_sellin_is_zero() {
         List<Product> products = new ArrayList<>();
-        products.add(new SHORProduct(0, 80));
+        products.add(new SulfurasProduct(0, 80));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -48,7 +48,7 @@ public class GildedRoseTest {
     @Test
     public void update_product_when_name_is_SULFURAS_HAND_OF_RAGNAROS_with_sellin_is_less_than_zero() {
         List<Product> products = new ArrayList<>();
-        products.add(new SHORProduct(-1, 80));
+        products.add(new SulfurasProduct(-1, 80));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -61,7 +61,7 @@ public class GildedRoseTest {
     @Test
     public void update_product_when_name_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_less_than_50() {
         List<Product> products = new ArrayList<>();
-        products.add(new BPTAT8ECProduct(15, 20));
+        products.add(new BackstageProduct(15, 20));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -74,7 +74,7 @@ public class GildedRoseTest {
     @Test
     public void update_product_when_name_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_is_50() {
         List<Product> products = new ArrayList<>();
-        products.add(new BPTAT8ECProduct(9, 50));
+        products.add(new BackstageProduct(9, 50));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -87,7 +87,7 @@ public class GildedRoseTest {
     @Test
     public void update_product_when_name_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_is_50_sellin_less_than_6() {
         List<Product> products = new ArrayList<>();
-        products.add(new BPTAT8ECProduct(1, 20));
+        products.add(new BackstageProduct(1, 20));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();
@@ -100,7 +100,7 @@ public class GildedRoseTest {
     @Test
     public void update_product_when_name_is_BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT_with_quality_is_less_than_50_sellin_is_0() {
         List<Product> products = new ArrayList<>();
-        products.add(new BPTAT8ECProduct(0, 23));
+        products.add(new BackstageProduct(0, 23));
         GildedRose app = new GildedRose(products);
 
         app.updateProducts();

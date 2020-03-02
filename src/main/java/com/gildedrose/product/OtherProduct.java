@@ -10,14 +10,14 @@ public class OtherProduct extends Product {
 
     @Override
     public void updateSellIn() {
-        sellIn -= 1;
+        sellIn--;
     }
 
     @Override
     public void updateQuality() {
         if (quality > 0)
-            quality -= 1;
+            quality--;
         if (quality > 0 && sellIn < 0)
-            quality -= 1;
+            quality--;
     }
 }
