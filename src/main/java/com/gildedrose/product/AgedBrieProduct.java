@@ -10,14 +10,12 @@ public class AgedBrieProduct extends Product {
 
     @Override
     public void updateSellIn() {
-        sellIn--;
+        decreaseSellIn();
     }
 
     @Override
     public void updateQuality() {
-        if (quality < 50)
-            quality++;
-        if (quality < 50 && sellIn < 0)
-            quality++;
+        increaseQualityIf(quality < 50);
+        increaseQualityIf(quality < 50 && sellIn < 0);
     }
 }

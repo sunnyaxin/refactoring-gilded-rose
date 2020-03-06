@@ -28,6 +28,28 @@ public abstract class Product {
 
     public abstract void updateQuality();
 
+    protected void decreaseSellIn() {
+        this.sellIn--;
+    }
+
+    protected void increaseQualityIf(boolean condition) {
+        if (condition) {
+            this.quality++;
+        }
+    }
+
+    protected void decreaseQualityIf(boolean condition) {
+        if (condition) {
+            this.quality--;
+        }
+    }
+
+    protected void resetQualityIf(boolean condition) {
+        if (condition) {
+            this.quality = 0;
+        }
+    }
+
     @Override
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
