@@ -21,9 +21,9 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).name, is(product.name));
-        assertThat(app.products.get(0).sellIn, is(1));
-        assertThat(app.products.get(0).quality, is(1));
+        assertThat(app.products.get(0).getName(), is(product.getName()));
+        assertThat(app.products.get(0).getSellIn(), is(1));
+        assertThat(app.products.get(0).getQuality(), is(1));
     }
 
     @Test
@@ -33,9 +33,9 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).name, is(product.name));
-        assertThat(app.products.get(0).sellIn, is(0));
-        assertThat(app.products.get(0).quality, is(80));
+        assertThat(app.products.get(0).getName(), is(product.getName()));
+        assertThat(app.products.get(0).getSellIn(), is(0));
+        assertThat(app.products.get(0).getQuality(), is(80));
     }
 
     @Test
@@ -45,9 +45,9 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).name, is(product.name));
-        assertThat(app.products.get(0).sellIn, is(-1));
-        assertThat(app.products.get(0).quality, is(80));
+        assertThat(app.products.get(0).getName(), is(product.getName()));
+        assertThat(app.products.get(0).getSellIn(), is(-1));
+        assertThat(app.products.get(0).getQuality(), is(80));
     }
 
     @Test
@@ -57,9 +57,9 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).name, is(product.name));
-        assertThat(app.products.get(0).sellIn, is(14));
-        assertThat(app.products.get(0).quality, is(21));
+        assertThat(app.products.get(0).getName(), is(product.getName()));
+        assertThat(app.products.get(0).getSellIn(), is(14));
+        assertThat(app.products.get(0).getQuality(), is(21));
     }
 
     @Test
@@ -69,9 +69,9 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).name, is(product.name));
-        assertThat(app.products.get(0).sellIn, is(8));
-        assertThat(app.products.get(0).quality, is(50));
+        assertThat(app.products.get(0).getName(), is(product.getName()));
+        assertThat(app.products.get(0).getSellIn(), is(8));
+        assertThat(app.products.get(0).getQuality(), is(50));
     }
 
     @Test
@@ -81,9 +81,9 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).name, is(product.name));
-        assertThat(app.products.get(0).sellIn, is(0));
-        assertThat(app.products.get(0).quality, is(23));
+        assertThat(app.products.get(0).getName(), is(product.getName()));
+        assertThat(app.products.get(0).getSellIn(), is(0));
+        assertThat(app.products.get(0).getQuality(), is(23));
     }
 
     @Test
@@ -93,9 +93,9 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).name, is(product.name));
-        assertThat(app.products.get(0).sellIn, is(-1));
-        assertThat(app.products.get(0).quality, is(0));
+        assertThat(app.products.get(0).getName(), is(product.getName()));
+        assertThat(app.products.get(0).getSellIn(), is(-1));
+        assertThat(app.products.get(0).getQuality(), is(0));
     }
 
     @Test
@@ -105,8 +105,8 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).name, is(product.name));
-        assertThat(app.products.get(0).sellIn, is(2));
-        assertThat(app.products.get(0).quality, is(5));
+        assertThat(app.products.get(0).getName(), is(product.getName()));
+        assertThat(app.products.get(0).getSellIn(), is(2));
+        assertThat(app.products.get(0).getQuality(), is(5));
     }
 }
