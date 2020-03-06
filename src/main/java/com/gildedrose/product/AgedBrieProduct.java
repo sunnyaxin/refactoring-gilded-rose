@@ -2,10 +2,10 @@ package com.gildedrose.product;
 
 public class AgedBrieProduct extends Product {
 
-    public static final String AGED_BRIE = "Aged Brie";
+    private static final String NAME = "Aged Brie";
 
     public AgedBrieProduct(int sellIn, int quality) {
-        super(AGED_BRIE, sellIn, quality);
+        super(NAME, sellIn, quality);
     }
 
     @Override

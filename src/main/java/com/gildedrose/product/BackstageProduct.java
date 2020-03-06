@@ -2,10 +2,10 @@ package com.gildedrose.product;
 
 public class BackstageProduct extends Product {
 
-    public static final String BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT = "Backstage passes to a TAFKAL80ETC concert";
+    private static final String NAME = "Backstage passes to a TAFKAL80ETC concert";
 
     public BackstageProduct(int sellIn, int quality) {
-        super(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT, sellIn, quality);
+        super(NAME, sellIn, quality);
     }
 
     @Override

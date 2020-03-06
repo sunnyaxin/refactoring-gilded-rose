@@ -2,10 +2,8 @@ package com.gildedrose.product;
 
 public class OtherProduct extends Product {
 
-    public static final String OTHER_PRODUCT_NAME = "other product name";
-
-    public OtherProduct(int sellIn, int quality) {
-        super(OTHER_PRODUCT_NAME, sellIn, quality);
+    public OtherProduct(String name, int sellIn, int quality) {
+        super(name, sellIn, quality);
     }
 
     @Override
