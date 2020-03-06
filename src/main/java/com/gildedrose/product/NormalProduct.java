@@ -1,8 +1,8 @@
 package com.gildedrose.product;
 
-public class OtherProduct extends Product {
+public class NormalProduct extends Product {
 
-    public OtherProduct(String name, int sellIn, int quality) {
+    public NormalProduct(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 

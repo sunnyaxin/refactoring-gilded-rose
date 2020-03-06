@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import com.gildedrose.product.AgedBrieProduct;
 import com.gildedrose.product.BackstageProduct;
-import com.gildedrose.product.OtherProduct;
+import com.gildedrose.product.NormalProduct;
 import com.gildedrose.product.Product;
 import com.gildedrose.product.SulfurasProduct;
 import org.junit.Test;
@@ -100,7 +100,7 @@ public class ProductTest {
 
     @Test
     public void update_product_when_name_is_conjured_mana_cake() {
-        Product product = new OtherProduct("Conjured Mana Cake", 3, 6);
+        Product product = new NormalProduct("Conjured Mana Cake", 3, 6);
         GildedRose app = new GildedRose(Collections.singletonList(product));
 
         app.updateProducts();
