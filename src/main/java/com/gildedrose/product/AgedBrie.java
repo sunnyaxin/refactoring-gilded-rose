@@ -1,10 +1,10 @@
 package com.gildedrose.product;
 
-public class AgedBrieProduct extends Product {
+public class AgedBrie extends Product {
 
     private static final String NAME = "Aged Brie";
 
-    public AgedBrieProduct(int sellIn, int quality) {
+    public AgedBrie(int sellIn, int quality) {
         super(NAME, sellIn, quality);
     }
 
