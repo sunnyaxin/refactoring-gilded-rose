@@ -15,9 +15,17 @@ public class Backstage extends Product {
 
     @Override
     public void updateQuality() {
-        increaseQualityIf(quality < 50);
-        increaseQualityIf(quality < 50 && sellIn < 11);
-        increaseQualityIf(quality < 50 && sellIn < 6);
-        resetQualityIf(sellIn < 0);
+        increaseQuality();
+        if (sellIn < 11) {
+            increaseQuality();
+        }
+        if (sellIn < 6) {
+            increaseQuality();
+        }
+    }
+
+    @Override
+    protected void updateQualityAfterExpired() {
+        quality = 0;
     }
 }

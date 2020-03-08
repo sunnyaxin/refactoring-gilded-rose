@@ -15,31 +15,28 @@ public abstract class Product {
     public void update() {
         updateSellIn();
         updateQuality();
+        if (isExpired()) {
+            updateQualityAfterExpired();
+        }
     }
 
     protected abstract void updateSellIn();
 
     protected abstract void updateQuality();
 
+    protected abstract void updateQualityAfterExpired();
+
     protected void decreaseSellIn() {
         this.sellIn--;
     }
 
-    protected void increaseQualityIf(boolean condition) {
-        if (condition) {
+    protected void increaseQuality() {
+        if (quality < 50) {
             this.quality++;
         }
     }
 
-    protected void decreaseQualityIf(boolean condition) {
-        if (condition) {
-            this.quality--;
-        }
-    }
-
-    protected void resetQualityIf(boolean condition) {
-        if (condition) {
-            this.quality = 0;
-        }
+    private boolean isExpired() {
+        return sellIn < 0;
     }
 }

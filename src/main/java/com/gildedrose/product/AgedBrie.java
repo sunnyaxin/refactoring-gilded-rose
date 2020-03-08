@@ -15,7 +15,11 @@ public class AgedBrie extends Product {
 
     @Override
     public void updateQuality() {
-        increaseQualityIf(quality < 50);
-        increaseQualityIf(quality < 50 && sellIn < 0);
+        increaseQuality();
+    }
+
+    @Override
+    protected void updateQualityAfterExpired() {
+        increaseQuality();
     }
 }

@@ -13,7 +13,17 @@ public class NormalProduct extends Product {
 
     @Override
     public void updateQuality() {
-        decreaseQualityIf(quality > 0);
-        decreaseQualityIf(quality > 0 && sellIn < 0);
+        decreaseQuality();
+    }
+
+    @Override
+    protected void updateQualityAfterExpired() {
+        decreaseQuality();
+    }
+
+    protected void decreaseQuality() {
+        if (quality > 0) {
+            this.quality--;
+        }
     }
 }
