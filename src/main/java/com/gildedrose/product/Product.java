@@ -12,18 +12,6 @@ public abstract class Product {
         this.quality = quality;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getSellIn() {
-        return sellIn;
-    }
-
-    public int getQuality() {
-        return quality;
-    }
-
     public abstract void updateSellIn();
 
     public abstract void updateQuality();
@@ -48,10 +36,5 @@ public abstract class Product {
         if (condition) {
             this.quality = 0;
         }
-    }
-
-    @Override
-    public String toString() {
-        return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 }
