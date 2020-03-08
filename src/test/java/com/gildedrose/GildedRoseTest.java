@@ -20,9 +20,7 @@ public class GildedRoseTest {
 
         gildedRose.updateProducts();
 
-        verify(product1).updateSellIn();
-        verify(product1).updateQuality();
-        verify(product2).updateSellIn();
-        verify(product2).updateQuality();
+        verify(product1).update();
+        verify(product2).update();
     }
 }

@@ -12,9 +12,14 @@ public abstract class Product {
         this.quality = quality;
     }
 
-    public abstract void updateSellIn();
+    public void update() {
+        updateSellIn();
+        updateQuality();
+    }
 
-    public abstract void updateQuality();
+    protected abstract void updateSellIn();
+
+    protected abstract void updateQuality();
 
     protected void decreaseSellIn() {
         this.sellIn--;
