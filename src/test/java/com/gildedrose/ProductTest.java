@@ -5,12 +5,11 @@ import com.gildedrose.product.Backstage;
 import com.gildedrose.product.NormalProduct;
 import com.gildedrose.product.Product;
 import com.gildedrose.product.Sulfuras;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProductTest {
 
@@ -21,7 +20,7 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).toString(), is(product.toString()));
+        assertThat(app.products.get(0).toString()).isEqualTo(product.toString());
     }
 
     @Test
@@ -31,7 +30,7 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).toString(), is(product.toString()));
+        assertThat(app.products.get(0).toString()).isEqualTo(product.toString());
     }
 
     @Test
@@ -41,7 +40,7 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).toString(), is(product.toString()));
+        assertThat(app.products.get(0).toString()).isEqualTo(product.toString());
     }
 
     @Test
@@ -51,7 +50,7 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).toString(), is(product.toString()));
+        assertThat(app.products.get(0).toString()).isEqualTo(product.toString());
     }
 
     @Test
@@ -61,7 +60,7 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).toString(), is(product.toString()));
+        assertThat(app.products.get(0).toString()).isEqualTo(product.toString());
     }
 
     @Test
@@ -71,7 +70,7 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).toString(), is(product.toString()));
+        assertThat(app.products.get(0).toString()).isEqualTo(product.toString());
     }
 
     @Test
@@ -81,7 +80,7 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).toString(), is(product.toString()));
+        assertThat(app.products.get(0).toString()).isEqualTo(product.toString());
     }
 
     @Test
@@ -91,6 +90,6 @@ public class ProductTest {
 
         app.updateProducts();
 
-        assertThat(app.products.get(0).toString(), is(product.toString()));
+        assertThat(app.products.get(0).toString()).isEqualTo(product.toString());
     }
 }
